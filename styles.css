@@ -6,11 +6,12 @@ body {
     margin: 0;
     font-family: 'Lexend', sans-serif;
     font-size: clamp(14px, 1.2vw, 16px);
+    color: #36322A;
 }
 
 /************************** TOP NAVIGATION BAR *************************/
 
-.topnav, main {
+header, main {
     padding: 20px clamp(20px, 5vw, 100px);
 }
 
@@ -84,6 +85,66 @@ body {
 .cart_icon{
     width: 30px;
     height: 30px;
+}
+
+.menu_nav{
+    width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.menu_nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.menu_nav ul li{
+    font-size: 1rem;
+}
+
+.menu_nav ul li a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #36322A;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.menu_nav ul li a:hover{
+    background-color: #85997F;
+    color: #F3EFE5;
+}
+
+/******************************* MAIN CONTENT ********************************/
+
+.product_table {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.table_item {
+    flex-basis: 25%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.table_item .product_image {
+    width: 100%;
+    height: auto;
+    border-radius: 5%;
+}
+
+.product_name, .product_price {
+    font-weight: bold;
+    font-size: 1rem;
 }
 
 /******************************* FOOTER ********************************/
@@ -160,7 +221,7 @@ footer{
     grid-template-columns: 50% 50%;
     text-align: center;
     background-color: #85997F;
-    margin-top: 30px;
+    margin-top: 50px;
     min-width: 0;
 }
 
@@ -169,21 +230,22 @@ h2 {
     margin-top: 0;
 }
 
-ul{
+.other_links ul {
     list-style: none;
     padding: 30px;
 }
 
-ul li{
+.other_links ul li {
     margin-bottom: 25px;
 }
 
-ul a{
+.other_links ul a{
     text-decoration: none;
     color: black;
+    font-size: 1rem;
 }
 
-ul a:hover{
+.other_links ul a:hover{
     color: #F3EFE5;
 }
 
@@ -197,7 +259,9 @@ ul a:hover{
 
 @media screen and (max-width: 1024px) {
 
-    .topnav, main, footer {
+/************************** TOP NAVIGATION BAR *************************/
+
+    .header, main, footer {
         padding: 20px;
     }
 
@@ -222,7 +286,7 @@ ul a:hover{
     grid-column: 2;
     grid-row: 1;
     justify-self: end;
-}
+    }
 
     .user-actions {
         display: flex;
@@ -232,6 +296,27 @@ ul a:hover{
     .user_icon, .heart_icon {
         margin-right: 0;
     }
+
+    .menu_nav ul{
+        gap: 10px;
+    }
+
+    .menu_nav ul li{
+        font-size: 15px;
+    }
+
+    /**************************** MAIN CONTENT *****************************/
+
+    .table_item {
+                flex-basis: 50%;
+    }
+
+    .product_name, .product_price {
+        font-weight: bold;
+        font-size: 13px;
+    }
+
+    /******************************* FOOTER ********************************/
 
     .social_media {
         gap: 10px;
@@ -260,4 +345,5 @@ ul a:hover{
         margin-left: auto;
         margin-right: auto;
     }
+
 }
